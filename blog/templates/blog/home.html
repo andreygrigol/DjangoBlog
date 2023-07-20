@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-    <h1>Página inicial do Blog</h1>
-</body>
-</html>
+{% extends "blog/base.html" %}
+{% block content %}
+    {% for post in posts %}
+        <h1>{{ post.titulo }}</h1>
+        <p>Por {{ post.autor }} em {{ post.data }}</p>
+        <p>{{ post.conteudo }}</p>
+    {% endfor %}
+{% endblock content %}
