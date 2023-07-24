@@ -6,3 +6,6 @@ class Post(models.Model):
     conteudo = models.TextField()
     data = models.DateTimeField(default=timezone.now)
     autor = models.ForeignKey(User, on_delete=models.CASCADE)
+    objects = models.Manager()
+    def __str__(self):
+        return self.titulo
